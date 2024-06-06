@@ -1,0 +1,116 @@
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 100vh; /* Definir altura como 100% da altura da viewport */
+}
+
+/* Estilo da introdução */
+#intro {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com transparência */
+    color: white;
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999; /* Garante que a introdução esteja na frente do conteúdo principal */
+    opacity: 1; /* Inicialmente opaco */
+    transition: opacity 0.5s ease; /* Transição suave de opacidade */
+}
+
+.intro-content p {
+    font-size: 24px;
+}
+
+/* Quando a introdução estiver invisível, oculta a introdução */
+#intro.fade-out {
+    opacity: 0; /* Torna-se transparente */
+    pointer-events: none; /* Desativa eventos de clique */
+}
+
+/* Estilo do conteúdo principal */
+#main-content {
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 2s ease; /* Transição suave de opacidade */
+}
+
+#main-content.hidden {
+    display: none; /* Oculta o conteúdo principal */
+}
+
+/* Quando a introdução desaparecer, revela o conteúdo principal */
+#intro.fade-out + #main-content {
+    opacity: 1; /* Torna-se visível */
+}
+
+
+/* Estilos gerais */
+header {
+    padding: 2rem;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    border-radius: 50%; /* Arredonda a logo */
+}
+
+
+.title {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+main {
+    margin-top: 2rem;
+}
+
+.profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile {
+    margin: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.badges img {
+    width: 20px;
+    height: 20px;
+}
+
+#backgroundColorPicker {
+    margin-top: 1rem;
+}
